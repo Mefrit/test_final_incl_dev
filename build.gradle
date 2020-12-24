@@ -19,8 +19,9 @@ java.sourceCompatibility = JavaVersion.VERSION_1_8
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
-task myJavadocs(type: Javadoc) {
-  source = sourceSets.main.allJava
+javadoc {
+    source = sourceSets.main.allJava
+    classpath = configurations.compile
 }
 
 allprojects {
